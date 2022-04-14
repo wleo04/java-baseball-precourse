@@ -1,5 +1,7 @@
-package baseball.Utils;
+package baseball;
 
+import utils.ValidationUtil;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +11,7 @@ public class ValidationUtilTest {
     @Test
     @DisplayName("baseballNumberVerification")
     public void baseballNumberVerification() {
-        assertThat(ValidationUtil.checkNumber(0)).isFalse();
+        Assertions.assertThat(ValidationUtil.checkNumber(0)).isFalse();
         assertThat(ValidationUtil.checkNumber(1)).isTrue();
         assertThat(ValidationUtil.checkNumber(5)).isTrue();
         assertThat(ValidationUtil.checkNumber(9)).isTrue();

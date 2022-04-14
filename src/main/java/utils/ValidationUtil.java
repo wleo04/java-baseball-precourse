@@ -1,4 +1,4 @@
-package baseball.Utils;
+package utils;
 
 public class ValidationUtil {
     public static final int MIN_NUMBER = 0;
