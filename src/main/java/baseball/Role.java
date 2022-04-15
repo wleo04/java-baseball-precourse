@@ -1,14 +1,15 @@
 package baseball;
 
 import enums.RoleStatus;
+import java.util.Objects;
 
 public class Role {
     private final int position;
-    private final int ballNumber;
+    private final SetNumber ballNumber;
 
     public Role(int position, int ballNumber) {
         this.position = position;
-        this.ballNumber = ballNumber;
+        this.ballNumber = new SetNumber(ballNumber);
     }
 
     public RoleStatus play(Role role) {
@@ -21,8 +22,8 @@ public class Role {
         return RoleStatus.NOTHING;
     }
 
-    private boolean matchBallNumber(int ballNumber) {
-        return this.ballNumber == ballNumber;
+    private boolean matchBallNumber(SetNumber ballNumber) {
+        return this.ballNumber.equals(ballNumber);
     }
 
     @Override
@@ -34,6 +35,6 @@ public class Role {
             return false;
         }
         Role role = (Role) o;
-        return position == role.position && ballNumber == role.ballNumber;
+        return position == role.position && Objects.equals(ballNumber, role.ballNumber);
     }
 }

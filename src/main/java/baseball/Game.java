@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
-    private final List<Role> roles;
+    private final List<Role> comRoles;
 
-    public Game(List<Integer> answers) {
-        this.roles = mapRole(answers);
+    public Game(List<Integer> comRoles) {
+        this.comRoles = mapRole(comRoles);
     }
 
     private static List<Role> mapRole(List<Integer> answers) {
@@ -19,9 +19,19 @@ public class Game {
         return roles;
     }
 
+    public GameResult play(List<Integer> userGames) {
+        Game userGame = new Game(userGames);
+        GameResult result = new GameResult();
+        for(Role role : comRoles) {
+            RoleStatus status = userGame.play(role);
+            result.write(status);
+        }
+        return result;
+    }
+
     public RoleStatus play(Role userAnswer) {
-        return roles.stream()
-                .map(info -> info.play(userAnswer))
+        return comRoles.stream()
+                .map(com -> com.play(userAnswer))
                 .filter(RoleStatus::isNotNothing)
                 .findFirst()
                 .orElse(RoleStatus.NOTHING);
