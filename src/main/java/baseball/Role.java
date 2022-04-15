@@ -1,24 +1,24 @@
 package baseball;
 
-import enums.RefereeStatus;
+import enums.RoleStatus;
 
-public class Referee {
+public class Role {
     private final int position;
     private final int ballNumber;
 
-    public Referee(int position, int ballNumber) {
+    public Role(int position, int ballNumber) {
         this.position = position;
         this.ballNumber = ballNumber;
     }
 
-    public RefereeStatus play(Referee referee) {
-        if(this.equals(referee)) {
-            return RefereeStatus.STRIKE;
+    public RoleStatus play(Role role) {
+        if(this.equals(role)) {
+            return RoleStatus.STRIKE;
         }
-        if(referee.matchBallNumber(ballNumber)) {
-            return RefereeStatus.BALL;
+        if(role.matchBallNumber(ballNumber)) {
+            return RoleStatus.BALL;
         }
-        return RefereeStatus.NOTHING;
+        return RoleStatus.NOTHING;
     }
 
     private boolean matchBallNumber(int ballNumber) {
@@ -33,7 +33,7 @@ public class Referee {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Referee referee = (Referee) o;
-        return position == referee.position && ballNumber == referee.ballNumber;
+        Role role = (Role) o;
+        return position == role.position && ballNumber == role.ballNumber;
     }
 }
