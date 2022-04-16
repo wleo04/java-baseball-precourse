@@ -1,4 +1,4 @@
-package baseball;
+package baseball.game;
 
 import enums.RoleStatus;
 import java.util.ArrayList;

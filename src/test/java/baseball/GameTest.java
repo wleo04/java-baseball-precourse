@@ -2,6 +2,9 @@ package baseball;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import baseball.game.Game;
+import baseball.game.GameResult;
+import baseball.game.Role;
 import enums.RoleStatus;
 import java.util.Arrays;
 import org.junit.jupiter.api.Test;

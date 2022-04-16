@@ -1,11 +1,11 @@
-package baseball.play;
+package baseball.start;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
-import baseball.Game;
-import baseball.GameResult;
-import baseball.SetNumber;
+import baseball.game.Game;
+import baseball.game.GameResult;
+import utils.SetNumber;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -69,9 +69,6 @@ public class GameStart {
                 break;
             }
         }
-
         return computerNumber;
     }
-
-
 }

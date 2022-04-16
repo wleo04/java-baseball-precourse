@@ -1,5 +1,6 @@
 package baseball;
 
+import baseball.game.Role;
 import enums.RoleStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

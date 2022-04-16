@@ -1,4 +1,4 @@
-package baseball;
+package utils;
 
 public class SetNumber {
     public static final int MIN_NUMBER = 1;

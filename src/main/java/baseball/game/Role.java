@@ -1,7 +1,8 @@
-package baseball;
+package baseball.game;
 
 import enums.RoleStatus;
 import java.util.Objects;
+import utils.SetNumber;
 
 public class Role {
     private final int position;
